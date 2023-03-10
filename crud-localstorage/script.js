@@ -54,19 +54,3 @@ action.innerHTML = "<a class='update' href='update.html?id="+keys[index]+"'>Upda
 }
 
 
-// const btnDelete = document.getElementById('btnDelete');
-
-// btnDelete.onclick = function(){
-//     const inputDelKeyD = inputDelKey.value;
-
-//     if(inputDelKey){
-//         localStorage.removeItem(inputDelKeyD);
-//         location.reload();
-//     }
-// };
-
-// btnAllDelete.onclick = function(){
-//     localStorage.clear();
-//     location.reload();
-// };
-
