@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="container">
+    <div class="header">
+        <h2>Register</h2>
+    </div>
+  
+    <form>
+  
+        <div class="group">
+          <label>Full Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="group">
+          <label>Number</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div class="group">
+          <label>Email</label>
+            <input type="email" name="email" id="email"> 
+        </div>
+        <div class="group">
+          <label>Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="group">
+          <button type="button" class="btn" name="update" onclick="updateF()">Update</button>
+        </div>
+    </form>
+<br><br> <br><br><br>
+    <!-- <div class="tablle">
+        <table class="table" id="table" border="1" cellpadding="1" cellspacing="1" width="54%">
+            <thead>
+                <tr>
+                    <th width="4%">Id</th>
+                    <th width="10%">Full Name</th>
+                    <th width="10%">Email</th>
+                    <th width="10%">Number</th>
+                    <th width="10%">Password</th>   
+                    <th width="10%">Action</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div> -->
+</body>
+<!-- <script src="script.js"></script> -->
+
+<script>
+    const url = window.location.href; 
+    const id = url.substring(url.lastIndexOf('=') + 1);
+    
+     console.log(id);
+     var fname = document.getElementById('name')
+     var email = document.getElementById('email')
+     var phone = document.getElementById('phone')
+     var password = document.getElementById('password')
+    
+     var userString = localStorage.getItem(id);
+     var user = JSON.parse(userString);
+
+     //  console.log(user.email)
+    email.value = user.email
+    fname.value =user.name
+    phone.value =user.phone
+    password.value =user.password
+    
+    
+    function updateF(){
+        var ans = confirm("Are you sure you want to update the data?");
+  if (ans == true) {
+     var fname = document.getElementById('name').value
+     var email = document.getElementById('email').value
+     var phone = document.getElementById('phone').value
+     var password = document.getElementById('password').value
+   
+    
+    var user = {
+     name: fname,
+     email: email,
+     phone: phone,
+     password: password
+     
+    };
+}
+    var userInfo = JSON.stringify(user);
+    localStorage.setItem(id, userInfo);
+    window.location.assign('index.html')
+    }
+    </script>
+    
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="container">
+    <div class="header">
+        <h2>Register</h2>
+    </div>
+  
+    <form>
+  
+        <div class="group">
+          <label>Full Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="group">
+          <label>Number</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div class="group">
+          <label>Email</label>
+            <input type="email" name="email" id="email"> 
+        </div>
+        <div class="group">
+          <label>Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="group">
+          <button type="button" class="btn" name="register" onclick="registerF()">Register</button>
+        </div>
+    </form>
+<br><br> <br><br><br>
+    <div class="tablle">
+        <table class="table" id="table" border="1" cellpadding="1" cellspacing="1" width="54%">
+            <thead>
+                <tr>
+                    <th width="4%">Id</th>
+                    <th width="10%">Full Name</th>
+                    <th width="10%">Email</th>
+                    <th width="10%">Number</th>
+                    <th width="10%">Password</th>   
+                    <th width="10%">Action</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
+
+<script>
+    function deleteUser(){
+        var ans = confirm("Are you sure you want to delete the data?");
+  if (ans == true) {
+    var deleterow = event.target.parentNode.parentNode;
+    var children = deleterow.childNodes;
+    var keyremove = children[1].innerHTML
+    console.log(children[1]);
+    localStorage.removeItem(keyremove);
+    deleterow.remove();
+}
+    }
+
+
+//EDIT
+// function edit() {
+//   rrow = event.target.parentElement.parentElement;
+//   document.getElementById("name").value = row.cells[0].innerHTML;
+//   document.getElementById("phone").value = row.cells[1].innerHTML;
+//   document.getElementById("email").value = row.cells[2].innerHTML;
+//   document.getElementById("password").value = row.cells[3].innerHTML;
+
+// }
+
+//     function updateUser() {
+//   row = event.target.parentElement.parentElement;
+//   row.cells[0].innerHTML = document.getElementById("name").value;
+//   row.cells[1].innerHTML = document.getElementById("phone").value;
+//   row.cells[2].innerHTML = document.getElementById("email").value;
+//   row.cells[3].innerHTML = document.getElementById("password").value;
+ 
+// }
+</script>
